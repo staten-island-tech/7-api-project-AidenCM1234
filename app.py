@@ -1,7 +1,7 @@
 import requests
 
-def getPoke(poke):
-    response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{poke.lower()}")
+def getPlayer():
+    response = requests.get(f"curl -v https://api.chess.com/pub/player/{player}")
     if response.status_code != 200:
         print("Error fetching data!")
         return None
@@ -13,6 +13,6 @@ def getPoke(poke):
         "weight": data["weight"],
         "types": [t["type"]["name"] for t in data["types"]]
     }
-
-pokemon = getPoke("Bagon")
-print(pokemon)
+getPlayer("hikaru")
+player = getPlayer("hikaru")
+print(player)
