@@ -1,7 +1,7 @@
 import requests
 
-def getPoke(poke):
-    url = f"https://api.chess.com/pub/player/{poke.lower()}"
+def getPlayer(user):
+    url = f"https://api.chess.com/pub/player/{user.lower()}"
     headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
     response = requests.get(url, headers=headers)
@@ -12,15 +12,22 @@ def getPoke(poke):
     
     avatar_usage =False
     data = response.json()
-    for i in data:
-        if i == "avatar":
-            avatar_usage =True
-    return {
-        "username": data["username"], 
-        if avatar_usage==True:
-            "avatar": data["avatar"] ,
-        "followers": data["followers"]
-    }
+    
 
-pokemon = getPoke("bulbasaur")
-print(pokemon)
+    basic_infomation={"username": data["username"], 
+            "followers": data["followers"]}
+    varible_infomation="e"
+    return basic_infomation #and varible_infomation
+
+    for i in data:
+            print(i)
+            print("  ")
+            if i =="avatar":
+                 avatar_usage=True
+    if avatar_usage == True:
+         return {"avatar": data["avatar"]}
+    
+    
+
+player = getPlayer("bob")
+print(player)
