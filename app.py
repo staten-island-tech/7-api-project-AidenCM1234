@@ -32,17 +32,12 @@ def getPlayers(user):
     for i in data2:
             print(i)
             print("  ")
-            """if i =="avatar":
-                 avatar_usage=True
-    if avatar_usage == True:
-         print (f"avatar: {data}[avatar]")
-    else:
-         print("No avatar")"}:"""
     
     basic_infomation={
-         "username": data["username"], 
-          "followers": data["followers"],
-          "best": data2["rating"]}
+        """ "username": data["username"], 
+          "followers": data["followers"],"""
+          
+          "chess_daily": data2["chess_daily"]}
     return basic_infomation 
 
 player = getPlayers("bob")#,"erik")
