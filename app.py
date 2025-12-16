@@ -32,13 +32,17 @@ def getPlayers(user):
     for i in data2:
             print(i)
             print("  ")
+    one_win=data2["chess_daily"]["record"]["win"]
+    one_lose=data2["chess_daily"]["record"]["loss"]
+    one_best=data2["chess_daily"]["best"]["rating"]
+    basic_infomation_player1={
+        "1username": data["username"], 
+          "1followers": data["followers"],
+          "1chess_daily_record_win": data2["chess_daily"]["record"]["win"],
+          "1chess_daily_record_loss": data2["chess_daily"]["record"]["loss"],
+          "1chess_daily_best_rating": data2["chess_daily"]["best"]["rating"]}
     
-    basic_infomation={
-        """ "username": data["username"], 
-          "followers": data["followers"],"""
-          
-          "chess_daily": data2["chess_daily"]}
-    return basic_infomation 
+    return basic_infomation_player1
 
 player = getPlayers("bob")#,"erik")
 print(player)
