@@ -71,6 +71,7 @@ def getPlayers(user,userb):
 
 player = getPlayers("bob","bulbasaur")
 print(player)
+
 import tkinter as tk
 from tkinter import messagebox
 
@@ -90,13 +91,13 @@ def compare_players():
 
     output.delete("1.0", tk.END)
 
-    output.insert(tk.END, f"Winner: {winner}\n\n")
+    output.insert(tk.END, f"Probable Winner: {winner}\n\n")
 
-    output.insert(tk.END, "Player 1:\n")
+    output.insert(tk.END, f"Player 1({user1}):\n")
     for k, v in p1.items():
         output.insert(tk.END, f"{k}: {v}\n")
 
-    output.insert(tk.END, "\nPlayer 2:\n")
+    output.insert(tk.END, f"\nPlayer 2({user2}):\n")
     for k, v in p2.items():
         output.insert(tk.END, f"{k}: {v}\n")
 
@@ -120,4 +121,6 @@ tk.Button(root, text="Compare Players", command=compare_players).pack(pady=10)
 output = tk.Text(root, height=30, width=60)
 output.pack()
 
+
 root.mainloop()
+#Some players may not have a chess_daily try erik and bob
