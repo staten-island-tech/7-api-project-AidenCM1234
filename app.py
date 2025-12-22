@@ -49,17 +49,17 @@ def getPlayers(user,userb):
     user_value=0
     userb_value=0
     if one_win>=two_win:
-         user_value+=1
+         user_value+=2
     else:
-        userb_value+=1
+        userb_value+=2
     if one_lose<=two_lose:
          user_value+=1
     else:
         userb_value+=1
     if one_best>=two_best:
-         user_value+=1
+         user_value+=2
     else:
-        userb_value+=1
+        userb_value+=2
     if one_win/(one_win+one_lose)>=two_win/(two_win+two_lose):
          user_value+=1
     else:
